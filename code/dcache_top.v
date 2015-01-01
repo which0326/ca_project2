@@ -122,7 +122,7 @@ assign r_hit_data   = sram_cache_data;
 	
 // read data :  256-bit to 32-bit
 always@(p1_offset or r_hit_data) begin
-	p1_data =hit ? r_hit_data[(p1_offset>>2)*32+31 -: 32] : 32'b0;
+	p1_data =hit ? r_hit_data[(p1_offset>>2)*32 +: 32] : 32'b0;
 end
 
 
