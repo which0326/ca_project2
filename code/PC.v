@@ -22,7 +22,7 @@ output  reg [31:0]  pc_o;
 always@(posedge clk_i) begin
   if(start_i)begin
     if(IsHazzard_i || hold_i)
-      pc_o <= pc_o;
+      pc_o <= pc_i-4;
     else
       pc_o <= pc_i;
   end
