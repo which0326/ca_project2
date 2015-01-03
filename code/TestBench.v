@@ -50,7 +50,7 @@ initial begin
 	
 	// initialize instruction memory (2KB)
 	for(i=0; i<512; i=i+1) begin
-		CPU.Instruction_Memory.memory[i] = 32'b0;
+		CPU.IM.memory[i] = 32'b0;
 	end
 	
 	// initialize data memory	(16KB)
@@ -70,7 +70,7 @@ initial begin
 	end
 	
 	// Load instructions into instruction memory
-	$readmemb("instruction.txt", CPU.Instruction_Memory.memory);
+	$readmemb("instruction.txt", CPU.IM.memory);
 	
 	// Open output file
 	outfile = $fopen("output.txt") | 1;
